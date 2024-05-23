@@ -18,8 +18,10 @@ $(document).ready(() => {
     });
 
   });
+  //Categorized product rendering
   var categorizedProductId = new URLSearchParams(window.location.search).get('id')
   $.getJSON('https://fakestoreapi.in/api/products', (data) => {
+    var totalPrice = 0
     data.products.forEach(product => {
       if (product.category == categorizedProductId) {
         const title = product.title.slice(0, 40)
@@ -37,6 +39,7 @@ $(document).ready(() => {
         )
       }
     })
+    //redirect to a product
     $('.product-cards').on('click', 'p', function () {
       var categorizedPage = `product.html?id=${this.id}`
       window.location.href = categorizedPage
@@ -55,6 +58,7 @@ $(document).ready(() => {
     })
 
 
+    //add to cart
     $('.addtocartbtn').click(function () {
       var btnId = this.id
       console.log(btnId)
@@ -66,16 +70,61 @@ $(document).ready(() => {
     data.products.forEach(product => {
       cart.forEach(productid => {
         if (product.id == productid) {
+          const productTitle = product.title.slice(0, 30)
           $('.added-products').append(`
-          <div class="product-card">
-        <div class="detail">
-        <p>${product.title}</p>
-          <h3>Price: $${product.price}</h3>
-          <button class="removebtn" id="${product.id}">remove</button>
-        </div>`)
+          <table>
+            <tr><td rowspan="3"><img src="${product.image}" alt="img"></td></tr>
+            <tr><td><p>${productTitle}...</p></td>
+            <td rowspan="3"class='btn'><button class="removebtn" id="${product.id}"><b><i class="bi bi-trash3-fill"></i></b></button></td></tr>
+            <td><b>Price: $${product.price}</b></td>
+            <tr ></tr>
+          </table>`)
         }
       })
+
+      cart.forEach(item => {
+        if (product.id == item) {
+          // var totalPrice = product.price + product.price
+          totalPrice += product.price
+
+        }
+      })
+
+      // 
+
     })
+    console.log(totalPrice)
+
+    if (cart.length !== 0) {
+      $('.price-listing').append(
+        `<table>
+          <tr><td colspan="2">PRICE DETAILS</td></tr>
+          <tr><td>Price (${cart.length} items)</td><td>$${totalPrice}</td>
+          </tr>
+          <tr><td>Discount</td><td>$0</td>
+          </tr>
+          <tr><td><b>Total Amount</b></td><td><b>$${totalPrice}</b></td>
+          </tr>
+        </table>`
+      )
+    } else {
+      $('.price-listing').remove()
+      $('.added-products').css({ width: '100%' }).append(
+        `<table>
+            <tr><td><i class="bi bi-cart3"></i> Cart Is Empty</td></tr>
+          </table>`).css({ textAlign: 'center' })
+    }
+
+    //navbar
+    $('.nav-bar').append(`
+    <h2>Fake<h2>Kart</h2>
+      </h2>
+
+      <ul>
+        <li><a href="index .html">Home</a></li>
+        <li><a href="cart.html">Cart</a></li>
+      </ul>
+    `)
     $('.removebtn').click(function () {
       location.reload(true);
 

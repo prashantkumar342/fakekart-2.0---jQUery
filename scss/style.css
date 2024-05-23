@@ -147,35 +147,66 @@ main .product-cards .card .productdetail .addtocartbtn {
   border-radius: 0.5vh;
 }
 
-main .added-products {
+main .order-section {
+  display: flex;
+}
+main .order-section .head {
+  background-color: blue;
+  color: white;
+  font-size: 2.5vh;
+  text-align: center;
+  width: 100%;
+  padding: 0.5vh;
+  font-family: "ubuntu";
+}
+main .order-section .added-products {
   width: 45vw;
   padding: 1vh;
 }
-main .added-products .product-card {
-  display: flex;
+main .order-section .added-products table {
+  margin-bottom: 1vh;
+  width: 100%;
 }
-main .added-products .product-card .detail {
-  border-bottom: solid;
-  padding: 0.5vh 1vh;
-}
-main .added-products .product-card .detail .removebtn {
-  margin: 0.5vh 1vh;
-  background-color: blue;
-  outline: none;
+main .order-section .added-products table .removebtn {
   border: none;
-  padding: 0.5vh 1vh;
-  border-radius: 0.5vh;
+  outline: none;
+  background-color: blue;
   color: white;
+  font-size: 2vh;
+  text-align: center;
+  cursor: pointer;
+  border-radius: 0.5vh;
+  padding: 1vh 2vh;
 }
-main .added-products .product-card .detail h3 {
-  margin: 0.5vh 1vh;
+main .order-section .added-products table img {
+  width: 50px;
+}
+main .order-section .added-products table,
+main .order-section .added-products td {
+  font-size: 2.3vh;
+  font-family: "ubuntu";
+  padding: 1vh;
+  border: 1px solid;
+  border-collapse: collapse;
+}
+main .order-section .added-products table .btn,
+main .order-section .added-products td .btn {
+  text-align: center;
+}
+main .order-section .price-listing {
+  padding: 1vh 2vh;
+  margin: 0 0 0 auto;
+  width: 50vw;
+}
+main .order-section .price-listing table,
+main .order-section .price-listing td {
   font-size: 2.5vh;
   font-family: "ubuntu";
-}
-main .added-products .product-card .detail p {
-  margin: 0.5vh 1vh;
-  font-size: 2vh;
-  font-family: "ubuntu";
+  width: 100%;
+  text-align: left;
+  padding: 1vh;
+  border-collapse: collapse;
+  border: solid 1px;
 }
 
 @media screen and (max-width: 1000px) {
@@ -212,26 +243,34 @@ main .added-products .product-card .detail p {
     padding: 0.5vh 1vh;
     font-size: 2vh;
   }
-  main .added-products {
-    width: 100%;
-    padding: 1vh;
+  main .order-section {
+    flex-direction: column;
   }
-  main .added-products .product-card .detail {
+  main .order-section .added-products {
+    width: 100%;
     padding: 1vh 2vh;
   }
-  main .added-products .product-card .detail .removebtn {
-    margin: 0.5vh 1vh;
-    outline: none;
-    border: none;
-    padding: 0.5vh 1vh;
-    border-radius: 0.5vh;
-  }
-  main .added-products .product-card .detail h3 {
-    margin: 0.5vh 1vh;
-    font-size: 2.5vh;
-  }
-  main .added-products .product-card .detail p {
-    margin: 0.5vh 1vh;
+  main .order-section .added-products table .removebtn {
     font-size: 2vh;
+    border-radius: 0.5vh;
+    padding: 1vh 2vh;
+  }
+  main .order-section .added-products table img {
+    width: 50px;
+  }
+  main .order-section .added-products table,
+  main .order-section .added-products td {
+    font-size: 2vh;
+    padding: 1vh;
+  }
+  main .order-section .price-listing {
+    padding: 1vh 2vh;
+    width: 100%;
+    margin: 0;
+  }
+  main .order-section .price-listing table,
+  main .order-section .price-listing td {
+    font-size: 2vh;
+    padding: 1vh;
   }
 }/*# sourceMappingURL=style.css.map */

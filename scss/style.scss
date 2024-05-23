@@ -161,40 +161,72 @@ main {
   }
 }
 //cart
-main .added-products {
+main .order-section {
   // outline: red solid;
-  width: 45vw;
-  padding: 1vh;
-  .product-card {
-    // outline: rgb(47, 0, 255) solid;
-    // margin: 5vh;
-    display: flex;
-    .detail {
-      // outline: rgb(0, 0, 0) solid;
-      border-bottom: solid;
-      padding: 0.5vh 1vh;
+  display: flex;
+  .head {
+    background-color: blue;
+    color: white;
+    font-size: 2.5vh;
+    text-align: center;
+    width: 100%;
+    padding: 0.5vh;
+    font-family: "ubuntu";
+  }
+  .added-products {
+    // outline: red solid;
+    width: 45vw;
+    padding: 1vh;
+    table {
+      margin-bottom: 1vh;
+      width: 100%;
+
       .removebtn {
-        margin: 0.5vh 1vh;
-        background-color: blue;
-        outline: none;
         border: none;
-        padding: 0.5vh 1vh;
-        border-radius: 0.5vh;
+        outline: none;
+        background-color: blue;
         color: white;
-      }
-      h3 {
-        margin: 0.5vh 1vh;
-        font-size: 2.5vh;
-        font-family: "ubuntu";
-      }
-      p {
-        margin: 0.5vh 1vh;
         font-size: 2vh;
-        font-family: "ubuntu";
+        text-align: center;
+        cursor: pointer;
+        border-radius: 0.5vh;
+        padding: 01vh 2vh;
+      }
+      img {
+        width: 50px;
+      }
+    }
+    table,
+    td {
+      font-size: 2.3vh;
+      font-family: "ubuntu";
+      padding: 1vh;
+      border: 1px solid;
+      border-collapse: collapse;
+      .btn {
+        text-align: center;
       }
     }
   }
+  .price-listing {
+    padding: 1vh 2vh;
+    // outline: blue solid;
+    margin: 0 0 0 auto;
+    width: 50vw;
+    table,
+    td {
+      font-size: 2.5vh;
+      font-family: "ubuntu";
+      width: 100%;
+      text-align: left;
+      padding: 1vh;
+      // width: 100%;
+      border-collapse: collapse;
+      border: solid 1px;
+    }
+  }
 }
+
 @media screen and (max-width: 1000px) {
   main {
     .product-cards {
@@ -231,29 +263,35 @@ main .added-products {
     }
   }
   //cart
-  main {
+  main .order-section {
+    flex-direction: column;
     .added-products {
       width: 100%;
-      padding: 1vh;
-      .product-card {
-        .detail {
-          padding: 1vh 2vh;
-          .removebtn {
-            margin: 0.5vh 1vh;
-            outline: none;
-            border: none;
-            padding: 0.5vh 1vh;
-            border-radius: 0.5vh;
-          }
-          h3 {
-            margin: 0.5vh 1vh;
-            font-size: 2.5vh;
-          }
-          p {
-            margin: 0.5vh 1vh;
-            font-size: 2vh;
-          }
+      padding: 1vh 2vh;
+      table {
+        .removebtn {
+          font-size: 2vh;
+          border-radius: 0.5vh;
+          padding: 01vh 2vh;
         }
+        img {
+          width: 50px;
+        }
+      }
+      table,
+      td {
+        font-size: 2vh;
+        padding: 1vh;
+      }
+    }
+    .price-listing {
+      padding: 1vh 2vh;
+      width: 100%;
+      margin: 0;
+      table,
+      td {
+        font-size: 2vh;
+        padding: 1vh;
       }
     }
   }
