@@ -52,8 +52,21 @@ $(document).ready(() => {
     var productId = new URLSearchParams(window.location.search).get('id')
     data.products.forEach(product => {
       if (product.id == productId) {
-        $('.selected-product').append(`<p>${product.title}</p>`)
-        //code is pending to write
+        $('.selected-product').append(`
+        <img src="${product.image}" alt="">
+      <div class="product-details">
+        <h3>${product.title}</h3>
+        <div class="fbtngrp">
+        <p class="btn rating"><i class="bi bi-star-half"></i> ratings </p>
+          <p class="btn clr"><i class="bi bi-palette2" ></i> ${product.color}</p><br>
+        </div>
+        <div class="sbtngrp">
+          <p class="btn price"><i class="bi bi-tag-fill"></i> Price: $${product.price}</p>
+          <p class="btn tocart" id="${product.id}"><i class="bi bi-cart-plus-fill"></i> add to cart</p>
+        </div>
+        <p class="desc">${product.description}</p>
+      </div>
+        `)
       }
     })
 
@@ -61,8 +74,12 @@ $(document).ready(() => {
     //add to cart
     $('.addtocartbtn').click(function () {
       var btnId = this.id
-      console.log(btnId)
       var cart = JSON.parse(localStorage.getItem('cart')) || [];
+      cart.push(btnId)
+      localStorage.setItem('cart', JSON.stringify(cart));
+    })
+    $('.btn.tocart').click(function () {
+      var btnId = this.id
       cart.push(btnId)
       localStorage.setItem('cart', JSON.stringify(cart));
     })
@@ -86,12 +103,8 @@ $(document).ready(() => {
         if (product.id == item) {
           // var totalPrice = product.price + product.price
           totalPrice += product.price
-
         }
       })
-
-      // 
-
     })
     console.log(totalPrice)
 

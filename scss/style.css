@@ -160,7 +160,7 @@ main .order-section .head {
   font-family: "ubuntu";
 }
 main .order-section .added-products {
-  width: 45vw;
+  width: 50vw;
   padding: 1vh;
 }
 main .order-section .added-products table {
@@ -207,6 +207,74 @@ main .order-section .price-listing td {
   padding: 1vh;
   border-collapse: collapse;
   border: solid 1px;
+}
+
+main .selected-product {
+  background-color: rgb(195, 93, 9);
+  padding: 2vh;
+  display: flex;
+}
+main .selected-product img {
+  border-radius: 1vh;
+  width: 300px;
+}
+main .selected-product .product-details {
+  margin: 0 0 0 3vh;
+  padding: 1vh 0vh;
+}
+main .selected-product .product-details .fbtngrp,
+main .selected-product .product-details .sbtngrp {
+  display: flex;
+}
+main .selected-product .product-details h3 {
+  width: -moz-fit-content;
+  width: fit-content;
+  margin: 0 2vh;
+  background-color: white;
+  padding: 0.5vh 1vh;
+  font-size: 3vh;
+  font-family: "ubuntu";
+  border-radius: 0.5vh;
+}
+main .selected-product .product-details .btn {
+  margin: 1vh 2vh;
+  width: -moz-fit-content;
+  width: fit-content;
+  text-align: center;
+  border-radius: 0.5vh;
+  padding: 0.5vh 1vh;
+}
+main .selected-product .product-details .btn.rating {
+  background-color: rgb(5, 163, 5);
+  color: white;
+  font-size: 2.5vh;
+  font-family: "ubuntu";
+}
+main .selected-product .product-details .btn.clr {
+  font-size: 2.5vh;
+  font-family: "ubuntu";
+  background-color: white;
+}
+main .selected-product .product-details .btn.price {
+  font-size: 2.5vh;
+  font-family: "ubuntu";
+  background-color: rgb(100, 95, 241);
+  color: white;
+}
+main .selected-product .product-details .btn.tocart {
+  font-size: 2.5vh;
+  font-family: "ubuntu";
+  background-color: yellow;
+}
+main .selected-product .product-details .desc {
+  width: -moz-fit-content;
+  width: fit-content;
+  margin: 1vh 2vh;
+  background-color: white;
+  padding: 0.5vh 1vh;
+  font-size: 2vh;
+  font-family: "ubuntu";
+  border-radius: 0.5vh;
 }
 
 @media screen and (max-width: 1000px) {
@@ -272,5 +340,63 @@ main .order-section .price-listing td {
   main .order-section .price-listing td {
     font-size: 2vh;
     padding: 1vh;
+  }
+}
+@media screen and (max-width: 600px) {
+  main .selected-product {
+    padding: 2vh 0;
+    display: flex;
+    flex-direction: column;
+  }
+  main .selected-product img {
+    border-radius: 1vh;
+    width: 250px;
+    float: left;
+    margin: 1vh 4vh;
+  }
+  main .selected-product .product-details {
+    margin: 0;
+    padding: 2vh 0vh;
+  }
+  main .selected-product .product-details .fbtngrp,
+  main .selected-product .product-details .sbtngrp {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px 10px;
+    margin: 1vh 4vh;
+  }
+  main .selected-product .product-details h3 {
+    margin: 0 4vh;
+    padding: 0.5vh 1vh;
+    font-size: 3vh;
+    border-radius: 0.5vh;
+  }
+  main .selected-product .product-details .btn {
+    margin: 0.5vh 0vh;
+    width: -moz-fit-content;
+    width: fit-content;
+    border-radius: 0.5vh;
+    padding: 0.5vh 1vh;
+  }
+  main .selected-product .product-details .btn.rating {
+    font-size: 2.5vh;
+  }
+  main .selected-product .product-details .btn.clr {
+    font-size: 2.5vh;
+  }
+  main .selected-product .product-details .btn.price {
+    font-size: 2.5vh;
+  }
+  main .selected-product .product-details .btn.tocart {
+    font-size: 2.5vh;
+  }
+  main .selected-product .product-details .desc {
+    margin: 0 4vh;
+    width: -moz-fit-content;
+    width: fit-content;
+    margin: 1vh 4vh;
+    padding: 0.5vh 1vh;
+    font-size: 2vh;
+    border-radius: 0.5vh;
   }
 }/*# sourceMappingURL=style.css.map */
