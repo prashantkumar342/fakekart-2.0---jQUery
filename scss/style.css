@@ -35,18 +35,131 @@ header .nav-bar ul {
 }
 header .nav-bar ul li {
   border-bottom: solid rgba(0, 0, 0, 0) 3px;
-  transition: 0.2s border ease;
 }
 header .nav-bar ul li a {
   text-decoration: none;
-  color: rgb(255, 255, 255);
-  font-size: 2.7vh;
+  padding: 0.5vh 1vh;
+  background-color: rgb(255, 255, 255);
+  color: rgb(0, 0, 0);
+  border-radius: 1vh;
+  font-size: 3vh;
   font-family: "Radio Canada Big";
+  transition: background 0.2s ease;
 }
-header .nav-bar ul li:hover {
-  border-bottom: solid rgb(0, 0, 0) 3px;
+header .nav-bar ul a:hover {
+  background-color: rgba(255, 0, 0, 0.403);
+  color: white;
+}
+header .headsliderWrapper {
+  display: flex;
+}
+header .headsliderWrapper .slider {
+  width: 30vw;
+  display: flex;
+  overflow: hidden;
+}
+header .headsliderWrapper .slider img {
+  width: 100%;
+  animation: headslider 10s infinite;
+}
+header .headsliderWrapper .headcontent {
+  width: 60vw;
+  margin: 0 auto 0 auto;
+  padding: 1vh;
+}
+header .headsliderWrapper .headcontent .headerproductslist {
+  margin-top: 2vh;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px 10px;
+  justify-content: center;
+}
+header .headsliderWrapper .headcontent .headerproductslist .card {
+  margin: 1vh;
+  padding: 1vh 2vh;
+  background-color: rgb(195, 93, 9);
+  width: 150px;
+  border-radius: 1vh;
+}
+header .headsliderWrapper .headcontent .headerproductslist .card .image {
+  margin: 0 auto auto;
+  width: 100px;
+}
+header .headsliderWrapper .headcontent .headerproductslist .card .image img {
+  border-radius: 0.5vh;
+  width: 100px;
+}
+header .headsliderWrapper .headcontent .headerproductslist .card button {
+  color: rgb(0, 0, 0);
+  border: none;
+  font-size: 2vh;
+  margin: 0.5vh 0.5vh;
+  padding: 0.5vh;
+  font-style: "ubuntu";
+}
+header .headsliderWrapper .headcontent .salelogo {
+  border: none;
+  font-size: 2vh;
+  background-color: rgb(255, 183, 0);
+  padding: 1vh;
+  border-radius: 1vh;
+}
+header .headsliderWrapper .headcontent .salename {
+  background-color: red;
+  text-align: center;
+  color: white;
+  padding: 1vh;
+  font-size: 3vh;
+  border-radius: 1vh;
+}
+header .headsliderWrapper .headcontent h3 {
+  font-size: 2.5vh;
+  font-family: "ubuntu";
+  padding: 0 0 1vh 0;
+}
+header .headsliderWrapper .headcontent p {
+  font-size: 2vh;
+  font-family: "ubuntu";
+  padding: 0 0 1vh 0;
+}
+header .headsliderWrapper .headcontent h5 {
+  font-size: 2.5vh;
+  font-family: monospace;
+  padding: 0 0 1vh 0;
 }
 
+@keyframes headslider {
+  0%, 10% {
+    transform: translateX(-100%);
+  }
+  20% {
+    transform: translateX(-200%);
+  }
+  30% {
+    transform: translateX(-300%);
+  }
+  40% {
+    transform: translateX(-400%);
+  }
+  50% {
+    transform: translateX(-500%);
+  }
+  60% {
+    transform: translateX(-600%);
+  }
+  70% {
+    transform: translateX(-700%);
+  }
+  80% {
+    transform: translateX(-800%);
+  }
+  90% {
+    transform: translateX(-900%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
 main .category-header {
   background-color: rgba(0, 0, 255, 0.763);
   padding: 1vh 2vh;
@@ -57,24 +170,92 @@ main .category-header p {
   font-family: "ubuntu";
   font-size: 3vh;
 }
-main .product-category {
-  margin: 2vh 0 0 0;
+main .productshowcase {
+  padding: 2vh;
+}
+main .productshowcase .productsHome {
   display: flex;
   flex-wrap: wrap;
-  gap: 1vh 0.5vh;
+  gap: 10px 30px;
+  justify-content: center;
+  padding: 2vh 0;
+  width: 100%;
+}
+main .productshowcase .productsHome .card {
+  background-color: rgb(195, 93, 9);
+  border-radius: 1vh;
+  padding: 2.5vh 2vh;
+  width: 150px;
+  height: 220px;
+}
+main .productshowcase .productsHome .card .image {
+  width: 120px;
+  margin: 0 auto;
+}
+main .productshowcase .productsHome .card .image img {
+  border-radius: 1vh;
+  width: 100%;
+}
+main .productshowcase .productsHome .card .productDetails {
+  display: flex;
+  flex-wrap: wrap;
+}
+main .productshowcase .productsHome .card .productDetails p {
+  border-radius: 0.5vh;
+}
+main .productshowcase .productsHome .card .productDetails p.title {
+  font-size: 2vh;
+  background-color: rgb(255, 255, 255);
+  color: rgb(0, 0, 0);
+  padding: 0.5vh;
+  margin: 0.5vh auto;
+  font-family: "ubuntu";
+  width: 120px;
+}
+main .productshowcase .productsHome .card .productDetails p.price {
+  font-size: 2vh;
+  background-color: rgb(255, 255, 255);
+  color: rgb(0, 0, 0);
+  padding: 0.5vh;
+  margin: 0.5vh;
+  font-family: "ubuntu";
+  width: -moz-fit-content;
+  width: fit-content;
+}
+main .productshowcase .productsHome .card .productDetails button.addtocart {
+  cursor: pointer;
+  border: none;
+  font-size: 2vh;
+  background-color: rgb(255, 255, 255);
+  color: rgb(0, 0, 0);
+  padding: 0.5vh 3vh;
+  background-color: rgb(255, 238, 0);
+  outline: none;
+  border-radius: 0.5vh;
+  margin: 0.5vh;
+  font-family: "ubuntu";
+  width: -moz-fit-content;
+  width: fit-content;
+}
+main .productshowcase .product-category {
+  background: linear-gradient(90deg, rgba(170, 90, 1, 0.8481260668) 0%, rgba(195, 144, 64, 0.8621316691) 35%, rgba(255, 172, 0, 0.6324397923) 100%);
+  padding: 2vh;
+  border-radius: 1vh;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1vh 2vh;
   justify-content: center;
 }
-main .product-category .card button {
-  width: 25vw;
-  margin: 0 1vh;
+main .productshowcase .product-category .card button {
+  width: 100%;
   border: none;
   padding: 0.5vh 1vh;
-  background-color: blue;
-  color: white;
+  background-color: rgb(255, 255, 255);
+  color: rgb(0, 0, 0);
   font-family: "ubuntu";
   border-radius: 0.5vh;
   cursor: pointer;
-  font-size: 2.3vh;
+  font-size: 3vh;
   outline: none;
 }
 
@@ -147,11 +328,9 @@ main .product-cards .card .productdetail .addtocartbtn {
   border-radius: 0.5vh;
 }
 
-main .order-section {
-  display: flex;
-}
-main .order-section .head {
+main .head {
   background-color: blue;
+  border: solid 0.2vh blue;
   color: white;
   font-size: 2.5vh;
   text-align: center;
@@ -159,9 +338,14 @@ main .order-section .head {
   padding: 0.5vh;
   font-family: "ubuntu";
 }
+main .order-section {
+  display: flex;
+  width: 98vw;
+  margin: 0 auto;
+}
 main .order-section .added-products {
-  width: 50vw;
-  padding: 1vh;
+  width: 48vw;
+  margin: 0 0 auto 0;
 }
 main .order-section .added-products table {
   margin-bottom: 1vh;
@@ -194,9 +378,8 @@ main .order-section .added-products td .btn {
   text-align: center;
 }
 main .order-section .price-listing {
-  padding: 1vh 2vh;
   margin: 0 0 0 auto;
-  width: 50vw;
+  width: 48vw;
 }
 main .order-section .price-listing table,
 main .order-section .price-listing td {
@@ -207,6 +390,32 @@ main .order-section .price-listing td {
   padding: 1vh;
   border-collapse: collapse;
   border: solid 1px;
+}
+main .checkout {
+  width: 90vw;
+  padding: 1vh;
+  margin: 0 auto;
+  text-align: center;
+}
+main .checkout label {
+  padding: 1vh 0;
+  font-size: 2vh;
+  font-family: "ubuntu";
+}
+main .checkout button {
+  margin: 1vh 0;
+  width: 100%;
+  border: none;
+  font-size: 4vh;
+  font-family: "ubuntu";
+  background-color: rgb(91, 91, 3);
+  padding: 0.5vh 1vh;
+  color: white;
+  border-radius: 1vh;
+  cursor: pointer;
+}
+main .checkout button:hover {
+  background-color: rgb(101, 101, 8);
 }
 
 main .selected-product {
@@ -277,6 +486,172 @@ main .selected-product .product-details .desc {
   border-radius: 0.5vh;
 }
 
+main .order-summary {
+  margin: 0 auto;
+  width: 98vw;
+}
+main .order-summary .address {
+  padding: 1vh;
+}
+main .order-summary .address .delivery-addr {
+  margin: 1vh 0;
+  padding: 0.5vh 0;
+  font-size: 2.3vh;
+  font-family: monospace;
+}
+main .order-summary .address .delivery-addr .saved-addr {
+  padding: 1vh 0;
+}
+main .order-summary .address .delivery-addr .saved-addr .addresses-list .addr-remove-btn {
+  width: -moz-fit-content;
+  width: fit-content;
+  margin: 0 0 0 auto;
+}
+main .order-summary .address .delivery-addr .saved-addr .addresses-list .addr-remove-btn button {
+  border: none;
+  padding: 0.5vh 1vh;
+  border-radius: 0.5vh;
+  background-color: red;
+  color: white;
+  cursor: pointer;
+}
+main .order-summary .address .delivery-addr .saved-addr table,
+main .order-summary .address .delivery-addr .saved-addr tr,
+main .order-summary .address .delivery-addr .saved-addr td {
+  border-collapse: collapse;
+  padding: 1vh;
+  width: 100%;
+  border: 0.2vh solid;
+}
+main .order-summary .address .delivery-addr .hr {
+  border: solid 1vh;
+  margin: 1vh 0;
+}
+main .order-summary .address .delivery-addr .new-addr {
+  border: none;
+  background-color: green;
+  color: white;
+  font-size: 2.5vh;
+  border-radius: 0.5vh;
+  width: 100%;
+  font-family: "ubuntu";
+  padding: 1vh;
+}
+main .order-summary .address .delivery-addr .addr {
+  background-color: rgb(213, 166, 166);
+  padding: 1vh;
+  color: rgb(0, 0, 0);
+  border-radius: 0.5vh;
+  margin: 0.5vh 0 0.5vh 0;
+}
+main .order-summary .address form #addr-save-btn {
+  border-radius: 0.5vh;
+  cursor: pointer;
+  border: none;
+  background-color: rgb(171, 171, 4);
+  padding: 1vh;
+  margin: 1vh 0;
+  width: 100%;
+}
+main .order-summary .address form input {
+  outline: none;
+  border: none;
+  font-size: 2vh;
+  font-family: "ubuntu";
+  margin: 0 0.5vh;
+  width: 99%;
+  padding: 1vh;
+}
+main .order-summary .address form table {
+  padding: 1vh 0;
+  width: 100%;
+}
+main .order-summary .address form table tr,
+main .order-summary .address form td {
+  border: solid 0.2vh;
+}
+
+@media screen and (max-width: 1200px) {
+  header .headsliderWrapper {
+    display: flex;
+    flex-direction: column;
+  }
+  header .headsliderWrapper .slider {
+    border-top: rgb(0, 0, 0) solid 4px;
+    border-bottom: rgb(0, 0, 0) solid 4px;
+    width: 100vw;
+    display: flex;
+    overflow: hidden;
+  }
+  header .headsliderWrapper .slider img {
+    width: 100%;
+    animation: headslider 10s infinite;
+  }
+  header .headsliderWrapper .headcontent {
+    width: 100%;
+    margin: 0 auto 0 auto;
+    padding: 1vh;
+  }
+  header .headsliderWrapper .headcontent .headerproductslist {
+    margin-top: 2vh;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px 10px;
+    justify-content: center;
+  }
+  header .headsliderWrapper .headcontent .headerproductslist .card {
+    margin: 1vh;
+    padding: 1vh 2vh;
+    background-color: rgb(195, 93, 9);
+    width: 150px;
+  }
+  header .headsliderWrapper .headcontent .headerproductslist .card .image {
+    margin: 0 auto auto;
+    width: 100px;
+  }
+  header .headsliderWrapper .headcontent .headerproductslist .card .image img {
+    border-radius: 0.5vh;
+    width: 100px;
+  }
+  header .headsliderWrapper .headcontent .headerproductslist .card button {
+    color: rgb(0, 0, 0);
+    border: none;
+    font-size: 1.5vh;
+    margin: 0.5vh 0.5vh;
+    padding: 0.5vh;
+    font-style: "ubuntu";
+  }
+  header .headsliderWrapper .headcontent .salelogo {
+    border: none;
+    font-size: 2vh;
+    background-color: rgb(255, 183, 0);
+    padding: 1vh;
+    border-radius: 1vh;
+  }
+  header .headsliderWrapper .headcontent .salename {
+    background-color: red;
+    text-align: center;
+    color: white;
+    padding: 1vh;
+    font-size: 2vh;
+    border-radius: 1vh;
+  }
+  header .headsliderWrapper .headcontent h3 {
+    font-size: 2vh;
+    font-family: "ubuntu";
+    padding: 0 0 1vh 0;
+  }
+  header .headsliderWrapper .headcontent p {
+    font-size: 1.5vh;
+    font-family: "ubuntu";
+    padding: 0 0 1vh 0;
+  }
+  header .headsliderWrapper .headcontent h5 {
+    font-size: 2vh;
+    font-family: monospace;
+    padding: 0 0 1vh 0;
+  }
+}
 @media screen and (max-width: 1000px) {
   main .product-cards {
     padding: 1vh;

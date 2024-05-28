@@ -7,8 +7,7 @@
   <link rel="stylesheet" href="./node_modules/bootstrap-icons/font/bootstrap-icons.css">
   <link rel="stylesheet" href="./scss/style.css">
   <script src="./node_modules/jquery/dist/jquery.js"></script>
-  <script src="./main.js"></script>
-  <title>Cart</title>
+  <title>checkout</title>
 </head>
 
 <body>
@@ -18,21 +17,21 @@
     </div>
   </header>
   <main>
-    <div class="order-details">
-      <div class="order-section">
-        <div class="added-products">
-          <p class="head">Your Cart Products</p>
+    <div class="order-summary">
+      <div class="address">
+        <div class="delivery-addr">
+          <div class="saved-addr">
+            <p class="head">Delivery Adderess</p>
+            <div class="addresses-list"></div>
+          </div>
+          <button class="new-addr">Add Address</button>
         </div>
-        <div class="price-listing">
-          <p class="head">Pricing</p>
-        </div>
+        <hr class="hr">
       </div>
-      <div class="checkout"></div>
     </div>
-
-
   </main>
 
+  <script src="./main.js"></script>
 </body>
 
 </html>
